@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
-const { ApolloServerLambda } = require('apollo-server-lambda')
+const { ApolloServer: ApolloServerLambda, gql } = require('apollo-server-lambda')
 
 //color swatches list
 const colorSwatches = require('./colorSwatches')
@@ -73,5 +73,4 @@ function createLocalServer () {
   });
 }
 
-// const server = new ApolloServer({ typeDefs, resolvers });
 module.exports = { createLambdaServer, createLocalServer }

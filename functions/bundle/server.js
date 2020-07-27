@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
-const { ApolloServer: LamdbaServer, gql } = require('apollo-server-lambda')
+const { ApolloServer: ApolloServerLambda, gql } = require('apollo-server-lambda')
 
 //color swatches list
 const colorSwatches = require('./colorSwatches')
@@ -55,8 +55,8 @@ const resolvers = {
   },
 };
 
-function createLambdaServer() {
-  return new LamdbaServer({
+function createLambdaServer () {
+  return new ApolloServerLambda({
     typeDefs,
     resolvers,
     introspection: true,
@@ -64,7 +64,7 @@ function createLambdaServer() {
   });
 }
 
-function createLocalServer() {
+function createLocalServer () {
   return new ApolloServer({
     typeDefs,
     resolvers,
