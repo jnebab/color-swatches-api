@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
-const { ApolloServerLambda } = require('apollo-server-lambda')
+const { ApolloServerLambda, gql } = require('apollo-server-lambda')
 
 //color swatches list
 const colorSwatches = require('./colorSwatches')
